@@ -1,4 +1,4 @@
-package com.jozzias.outboxpatternconsumer.consumer;
+package com.jozzias.outboxpatternconsumer.infrastructure.rabbitmq.consumer;
 
 
 public class QueueName {

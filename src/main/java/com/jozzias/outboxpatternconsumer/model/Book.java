@@ -1,15 +1,13 @@
-package com.jozzias.outboxpattern.entities;
+package com.jozzias.outboxpatternconsumer.model;
 
 
-import com.jozzias.outboxpattern.dto.BookRequest;
-import jakarta.persistence.*;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.hibernate.annotations.GenericGenerator;
+    import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+    import lombok.*;
 
-import java.time.LocalDateTime;
+    import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity(name = "book")
@@ -17,6 +15,7 @@ import java.util.UUID;
 @Setter
 @Getter
 @NoArgsConstructor
+@AllArgsConstructor
 public class Book {
 
     @Id
@@ -29,11 +28,7 @@ public class Book {
 
     private LocalDateTime year;
 
-    public Book(BookRequest bookRequest) {
-        this.title = bookRequest.title();
-        this.year = bookRequest.year();
-        this.description = bookRequest.description();
-    }
+    private boolean publicDomain;
 
 }
 
